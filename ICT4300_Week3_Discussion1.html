@@ -15,29 +15,75 @@
             padding: 1%;
             position:absolute;
             top:202px;
-            left:50px
+            left:50px;
+            padding:30px;
             
         }
+
+        <!-- a.hover use hover to make changes when the mouse hovers over the object-->
+        
+
         #container {margin:auto;
-            width:50%;
+            width:90%;
             border: 2px solid black;
         }
+        .list {
+            float: left;
+            top:5px;
+            right:5px;
+            font-weight:bold;}
+
+        #beerLogo {position:relative;
+            float: left;
+            top:1px;
+            right:5px;
+            margin-right:5px;
+            margin-bottom:1px;
+            opacity: 50%;
+            }
+        
+        ul .beer{background-color: brown;}
+
+        .beer{font-style: italic;}
+
     </style>
 </head>
 
 
 <body>
     <div id = "container">
-<h1>List of My Favorite Breweries in Colorado</h1>
+        <h1>List of My Favorite Breweries in Colorado</h1>
+    </div>
+
 <div id = "List_breweries">
-<ul>
-    <li>Comrade Brewing</li>
-    <li>Our Mutual Friend Brewing</li>
-    <li>Westbound and Down Brewing</li>
-    <li>Bierstadt Brewing</li>
-    <li>Weldwerks Brewing</li>
-</ul></div>
-<p> These are my favorite breweries in Colorado listed in order.</p>
+    
+    <div class="list">
+        <ul>
+            <li>Comrade Brewing</li>
+            <li>Our Mutual Friend Brewing</li>
+            <li>Westbound <span class="beer">and</span> Down Brewing</li>
+            <li>Bierstadt Brewing</li>
+            <li>Weldwerks Brewing</li>
+        </ul>
+        
+        <img id="beerLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIFSb-I_GF6ET0pljl-SyIJnCyyXLRRF2lqhiOxYId&s">
+        
+        <p class="words beer"> 
+            
+            These are my favorite breweries in Colorado listed in order. 
+            I have heard that clear:both is not nice way to clear floats. 
+            The other way is using a empty div tag, also that doesn't sound appealing..
+            ...the best way to clear floats is using that .class-name:before and 
+            .class:after property......i have never understood that....
+            .that thing is really hard to memorise. Can you provide me with a nice doc that 
+            explains that part. Along with why we need those css rules for better clearing ?
+        </p>
+    </div>
+</div>
+
+
+
+
 </div>
 </body>
 </html>
