@@ -6,84 +6,305 @@
     <title>List of My Favorite Breweries in Colorado</title>
 
     <style>
-
-        #List_breweries {
-            width:70%;
-            background: aquamarine;
-            margin: 5px;
-            border: 10px ridge rgb(255, 0, 0);
-            padding: 1%;
-            position:absolute;
-            top:202px;
-            left:50px;
-            padding:30px;
+    
+    
+    
+    
+        #List_breweries{
+            z-index:2;
+            
+            
+            
+            
+            
+            
+            
             
         }
 
-        <!-- a.hover use hover to make changes when the mouse hovers over the object-->
+       
         
+        #container{
+            width:1400px;
+            position:absolute;
+            top:15%;
 
-        #container {margin:auto;
-            width:90%;
-            border: 2px solid black;
         }
-        .list {
-            float: left;
-            top:5px;
-            right:5px;
-            font-weight:bold;}
-
-        #beerLogo {position:relative;
-            float: left;
-            top:1px;
-            right:5px;
-            margin-right:5px;
-            margin-bottom:1px;
-            opacity: 50%;
+        #title {
+            width:30%;
+            position:relative;
+            top:15%;
+            'left:50%;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 auto;
+            border: 2px solid black;
+            background-color: azure;
+            z-index:3;
+        }
+                
+        #background_img {position:absolute;
+            z-index:2;
+            width:1400px;
+            height:1000px;
+            opacity: 40%;
+            border: 10px ridge black
             }
         
-        ul .beer{background-color: brown;}
+            .beerLogo {position:relative;
+            width:250px;
+            opacity: 100%;
+                z-index:3;
+            
+            }
+            #comradelogo{
+                position:absolute;
+                top:50%;
+                right:10%;
+            }
 
-        .beer{font-style: italic;}
+            #OMFlogo{
+                position:absolute;
+                top:50%;
+                left:10%;
+                
+            }
+            #WnDlogo{
+                position:absolute;
+                bottom:25%;
+                left:575px;
+            }
+            #Cohesionlogo{
+                position:absolute ;
+                top:400px;
+                left:100px;
+            }
+            #Bierstadtlogo{
+                position:absolute;
+                top:400px;
+                right:7%;
+            }
+    
+        
+        #comradelogo:hover + .comradeDesc{
+                
+                display:block;
+        }
 
+        #comradelogo:hover {
+                width: 350px;
+                position:absolute;
+        }
+        #OMFlogo:hover {
+                width: 350px;
+                position:absolute;
+        }
+
+        #OMFlogo:hover + .OMFDesc{
+                
+                display:block;
+        }
+
+        #OMFlogo:hover {
+                width: 350px;
+                position:absolute;
+        }
+
+        #OMFlogo:hover + .OMFDesc{
+                
+                display:block;
+        }   
+        #WnDlogo:hover {
+                width: 350px;
+                position:absolute;
+        }
+
+        #WnDlogo:hover + .WnDDesc{
+                
+                display:block;
+        }   
+        #Cohesionlogo:hover {
+                width: 350px;
+                position:absolute;
+        }
+
+        #Cohesionlogo:hover + .CohDesc{
+                
+                display:block;
+        }   
+        #Bierstadtlogo:hover {
+                width: 350px;
+                position:absolute;
+        }
+
+        #Bierstadtlogo:hover + .BierDesc{
+                
+                display:block;
+        }   
+
+    
+    h3 {
+        font-size: 30px;
+        fon: sans-serif;
+
+        margin:0%;
+    }
+
+        .comradeDesc{font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        width:400px;
+        border: 5px solid black;
+        background-color:white;
+        position: absolute;
+        top: 25%;
+        left:40%; 
+        float: none;
+        z-index:3;
+        padding: 4px;
+        display:none;
+        }   
+
+        .OMFDesc {font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        width:400px;
+        border: 5px solid black;
+        background-color:white;
+        position: absolute;
+        top: 25%;
+        left:30%; 
+        float: none;
+        z-index:3;
+        padding: 4px;
+        display:none;
+        }
+
+        .WnDDesc{font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        width:400px;
+        border: 5px solid black;
+        background-color:white;
+        position: absolute;
+        top: 20%;
+        left:30%; 
+        float: none;
+        z-index:3;
+        padding: 4px;
+        display:none;
+        }
+
+        .CohDesc{font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        width:400px;
+        border: 5px solid black;
+        background-color:white;
+        position: absolute;
+        top: 30%;
+        left:40%; 
+        float: none;
+        z-index:3;
+        padding: 4px;
+        display:none;
+        }
+        .BierDesc{font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        width:400px;
+        border: 5px solid black;
+        background-color:white;
+        position: absolute;
+        top: 30%;
+        left:35%; 
+        float: none;
+        z-index:3;
+        padding: 4px;
+        display:none;
+        }
     </style>
 </head>
 
 
 <body>
+    <img id="background_img" src="https://www.congressparktaproom.com/wp-content/uploads/2019/08/congress-park-taproom-5.jpg">
     <div id = "container">
+        <div id="title">
         <h1>List of My Favorite Breweries in Colorado</h1>
+        </div>
     </div>
 
-<div id = "List_breweries">
+
     
-    <div class="list">
-        <ul>
-            <li>Comrade Brewing</li>
-            <li>Our Mutual Friend Brewing</li>
-            <li>Westbound <span class="beer">and</span> Down Brewing</li>
-            <li>Bierstadt Brewing</li>
-            <li>Weldwerks Brewing</li>
-        </ul>
-        
-        <img id="beerLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIFSb-I_GF6ET0pljl-SyIJnCyyXLRRF2lqhiOxYId&s">
-        
-        <p class="words beer"> 
+<div class="list">
             
-            These are my favorite breweries in Colorado listed in order. 
-            I have heard that clear:both is not nice way to clear floats. 
-            The other way is using a empty div tag, also that doesn't sound appealing..
-            ...the best way to clear floats is using that .class-name:before and 
-            .class:after property......i have never understood that....
-            .that thing is really hard to memorise. Can you provide me with a nice doc that 
-            explains that part. Along with why we need those css rules for better clearing ?
-        </p>
-    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+<div class="comrade">
+    <img class="beerLogo" id= "comradelogo" src="https://customer-api.arryved.com/api/image/BGh0ow59cV_AD_qh/true">
+        <div class="comradeDesc">    
+            <p >
+                <h3>
+                    Comrade Brewing
+                </h3>
+                <a href="https://comradebrewing.com/">comradebrewing.com</a><br>
+                Denver, CO. The centerpiece of our brewery is something you don’t see often, a brewhouse and all other process vessels made in the USA. The 15 barrel brewhouse is from JV Northwest in Canby, Oregon. JV Northwest has been manufacturing tanks in the land of the free in Canby, Oregon since 1981. Although we looked at several manufacturers, JV Northwest was the only company that had the experience, technical expertise and met our “Made in the USA” requirement. Comrade Brewing is 3 of 70+ breweries in Denver that exclusively buy US Made tanks
+            </p>
+        </div>
+</div>
+<div class="OMF">
+    <img class="beerLogo" id= "OMFlogo"src="https://www.buyomfbeer.com/uploads/b/a7ec0da34b71228dd50936545b831327bc1d3f5d0e996ab66e5cf634dd237288/newlogomark_omf-01_1631546506.png?width=400">
+        <div class="OMFDesc">
+            <p>
+                <h3>
+                    Our Mutual Friend Brewing
+                </h3>
+                <a href="https://www.buyomfbeer.com/">buyomfbeer.com</a><br>
+                Denver, CO. We opened Our Mutual Friend Brewing in December of 2012 with the goal of creating a place for community through our small neighborhood taproom in the Five Points neighborhood of Denver at 2810 Larimer Street. Starting on a 31-gallon brew system, we worked tirelessly to understand the techniques and history of beer while looking forward to where craft beer was heading. Doing so influenced our vision to create beers with a sense of place, forging relationships with Colorado hop and barley growers and leading us into offering as many 100% Colorado grown beers as possible.
+            </p>
+        </div>
+</div>
+<div class = "WnD">
+    <img class="beerLogo" id= "WnDlogo"src="https://cdn.shopify.com/s/files/1/0416/0366/1982/files/WBD_Logo_Black_500x.png?v=1614300355">
+        <div class="WnDDesc">
+            <p>
+                <h3>
+                    Westbound and Down Brewing
+                </h3>
+                <a href="https://westboundanddown.com/">westboundanddown.com/</a><br>
+                Westbound & Down is a brewing company dedicated to adventure. We got our start when some good friends made a pact to share their pursuit of better food and drink with the world. Today we’re a family-run business with deep Colorado roots that aims to infuse the spirit of the West in every keg, bottle, meal, and moment.
+            </p>
+        </div>
+</div>  
+<div class="Cohesion">
+    <img class="beerLogo" id= "Cohesionlogo"src="https://images.squarespace-cdn.com/content/v1/60c6a7a80514e329213d01c3/87591062-10f4-4d2d-b12d-f1305744bdd9/Cohesion+Logo+Color+Variations_Primary+527061+%281%29.png?format=1500w">
+        <div class="CohDesc">
+            <p>
+                <h3>
+                    Cohesion Brewing
+                </h3>
+                <a href="https://www.cohesionbeer.com/">cohesionbeer.com</a><br>
+                Having opened in 2021, Cohesion Brewing Company is a brewery dedicated to the exploration of the Czech Republic’s unique beer culture. As the country consuming the most beer per capita in the world, we’ve been inspired by the Czech beer styles, methods of service, and ingredients that make the Czech beer culture stand apart. In addition to highlighting both the classics like pilsner-style beer and less seen styles, we hope to find ways to infuse local ingredients, as well as other learned brewing techniques to bring our own flair to these storied beers.
+            </p>
+        </div>
+</div>
+<div class="Bierstadt">
+    <img class="beerLogo" id= "Bierstadtlogo"src="https://bierstadtlager.com/wp-content/uploads/2016/10/beirstadtMark@256.png">
+        <div class="BierDesc">
+            <p>
+                <h3>
+                    Bierstadt Lagerhaus
+                </h3>
+                <a href="https://bierstadtlager.com/">bierstadtlager.com</a><br>
+                The owners of Bierstadt Lagerhaus aren’t known for compromising. They make traditional German-style lagers in a traditional way, and they have always taken a hard line against packaging them in cans or bottles.“We believe very strongly in drinking draft beer. It is a better experience than a packaged beer, especially considering the kind of beer we make — delicate and nuanced,” says co-owner and brewer Ashleigh Carter.
+            </p>
+        </div>
 </div>
 
 
 
-
-</div>
 </body>
 </html>
