@@ -4,10 +4,12 @@
 <head>
 <title>Page Title</title>
 <style>
-    h1 background-color:DodgerBlue;"
+    h1 {background-color:DodgerBlue;}
+
 
 </style>
 </head>
+
 <body style="text-align:center;">
 
 <h1 style="font-size:300%;"">This is a Heading</h1>
