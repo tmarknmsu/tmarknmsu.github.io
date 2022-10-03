@@ -1,10 +1,113 @@
 :root{
-    --green:#00FF00;
+    --green:#C99700;
     --white:#FFFFFF;
-    --black:#000000;
+    --black:#0C2340;
+    --irishPrime:#C99700;
+    --irishSecd:#0C2340;
+    --iowaPrime:#FFCD00;
+    --iowaSecd:#000000;
+    --nmsuPrime:#861F41;
+    --nmsuSecd:#97999B;
+    --coloradoPrime:#CFB87C;
+    --coloradoSecd:#000000;
+
+
+}
+#logo{
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+.wrapperLogo{
+float: left;
+width: 40px;
+height: 40px;
 }
 
+#wrapper {
+        width: 1200px;
+        margin: 0 auto;
+        background-color: #CDCDCD;
+    }
+    
+    .top-menu {
+        margin-top: 40px;
+        background-color: #FFFFFF;
+    }
 
+    .logo {
+        flex: 0;
+    }
+    
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    .search-container {
+        flex: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 2rem;
+    }
+    
+    .between {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+    }
+    
+    .menu div ul.left {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .menu div ul.right {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .menu ul li {
+        flex: auto;
+        display: inline;
+        list-style: none;
+        padding: 0 1rem;
+    }
+    
+    .menu ul li a {
+        text-decoration: none;
+        color: #303030;
+        font: 14px lato;
+    }
+
+.irish-theme {
+--bg: var(--irishSecd);
+--fontColor:var(--irishPrime);
+--prime:var(--irishPrime)
+}
+
+.schedule{
+    width:60%;
+    padding-left:5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color:var(--white);
+    border: 5px solid var(--prime) ;
+}
+    
+
+
+.notreDame {display: block;}
+.iowa {display: none;}
+.NMSU {display: none;}
+.colorado {display: none;}
 
 ul{
     font-family:helvetica;
@@ -23,36 +126,37 @@ font-family: monospace;
 }
 
 
-.light-theme {
---bg: var(--green);
---fontColor:var(--black);
---btnFontColor:var(--white);
---btnBg:var(--black);
+
+
+
+.aggies-theme {
+--bg: var(--nmsuPrime);
+--fontColor: var(--nmsuSecd);
+
+
 }
 
-.dark-theme {
---bg: var(--black);
---fontColor: var(--green);
---btnFontColor:var(--black);
---btnBg:var(--green);
+.hawkeyes-theme {
+--bg: var(--iowaSecd);
+--fontColor: var(--iowaPrime);
+.notreDame display: none;
+
 }
 
+.buffaloes-theme {
+--bg: var(--coloradoPrime);
+--fontColor: var(--coloradoSecd);
+}
+    
 body{
 background:var(--bg);
 color:var(--fontColor);
 font-family:helvetica;
 }
-.btn{
-color: var(--btnFontColor);
-background-color: var(--btnBg);
-position: absolute;
-top: 20px;
-left: 250px;
-height: 50px;
-width: 50px;
-border-radius: 50%;
-border: none;
-}
 
+
+.schedule  
+    { background-color:var(--white);
+    border: 5px solid black;}
 
 
