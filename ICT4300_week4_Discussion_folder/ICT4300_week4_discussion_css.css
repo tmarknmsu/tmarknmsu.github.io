@@ -86,27 +86,27 @@ height: 40px;
         font: 14px lato;
     }
 
-.irish-theme {
---bg: var(--irishSecd);
---fontColor:var(--irishPrime);
---prime:var(--irishPrime)
-}
+
+
+
+
 
 .schedule{
     width:60%;
+    min-width: 600px;
     padding-left:5%;
     padding-right: 5%;
     padding-top: 1%;
     padding-bottom: 1%;
     background-color:var(--white);
-    border: 5px solid var(--prime) ;
+    border: 5px solid;
+    border-color: var(--prime);
+    color: #000000;
 }
-    
 
-
-.notreDame {display: block;}
+.notreDame { display:none}
 .iowa {display: none;}
-.NMSU {display: none;}
+.nmsu {display:none}
 .colorado {display: none;}
 
 ul{
@@ -125,27 +125,37 @@ list-style: square;
 font-family: monospace;
 }
 
+.noTheme{
+    --bg: var(--white)
+    --fontColor:var(--white);
+    --prime:var(--white)
+    }
 
 
-
+.irish-theme {
+    --bg: var(--irishSecd);
+    --fontColor:var(--irishPrime);
+    --prime:var(--irishPrime)
+    }
 
 .aggies-theme {
 --bg: var(--nmsuPrime);
 --fontColor: var(--nmsuSecd);
-
+--prime:var(--nmsuSecd);
 
 }
 
 .hawkeyes-theme {
 --bg: var(--iowaSecd);
 --fontColor: var(--iowaPrime);
-.notreDame display: none;
+--prime:var(--iowaPrime)
 
 }
 
 .buffaloes-theme {
 --bg: var(--coloradoPrime);
 --fontColor: var(--coloradoSecd);
+--prime:var(--coloradoSecd)
 }
     
 body{
@@ -155,8 +165,6 @@ font-family:helvetica;
 }
 
 
-.schedule  
-    { background-color:var(--white);
-    border: 5px solid black;}
+    
 
 
