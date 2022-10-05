@@ -99,12 +99,6 @@ list-style: square;
 font-family: monospace;
 }
 
-.noTheme{
-    --bg: var(--white)
-    --fontColor:var(--white);
-    --prime:var(--white)
-    }
-
 
 .irish-theme {
     --bg: var(--irishSecd);
