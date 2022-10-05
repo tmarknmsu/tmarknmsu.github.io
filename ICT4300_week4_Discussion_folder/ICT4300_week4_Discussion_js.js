@@ -1,9 +1,5 @@
 'use strict';
 
-var notreDamejs= document.getElementsByClassName("notreDame")[0];
-var iowajs= document.getElementsByClassName("iowa")[0];
-var nmsujs= document.getElementsByClassName("nmsu")[0];
-var coloradojs= document.getElementsByClassName("colorado")[0];
 
 const irish = document.querySelector('.ndBtn');
 irish.addEventListener('click',function(){
