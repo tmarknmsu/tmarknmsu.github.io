@@ -1,0 +1,40 @@
+/// This is a quick pseudocode for a webapp that displays a teams theme and schedule.
+
+//Load HTML
+//Display all 4 logos in top wrapper
+//Make all 4 logos unique buttons
+
+If button 1 is clicked
+    Display team 1 theme div
+    Display team 1 schedule div
+    Hide other theme divs
+    Hide other schedules divs
+
+Else button 2 is clicked
+    Display team 2 theme div
+    Display team 2 schedule div
+    Hide other theme divs
+    Hide other schedules divs
+
+Else button 3 is clicked
+    Display team 3 theme div
+    Display team 3 schedule div
+    Hide other theme divs
+    Hide other schedules divs  
+
+Else button 4 is clicked
+    Display team 4 theme div
+    Display team 4 schedule div
+    Hide other theme divs
+    Hide other schedules divs
+
+Else 
+
+/// Is a number odd or even?
+Write "Enter number to tell if odd or even"
+read input
+Set num1 to input divided by 2
+if num1 has no remainder
+    Write "that is an even number"
+Else
+    write "that is an odd number"
