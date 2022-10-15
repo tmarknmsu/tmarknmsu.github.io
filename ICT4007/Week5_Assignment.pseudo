@@ -1,0 +1,138 @@
+// For this assignmnet I will break down the process of adding something to a customers tab and then closing them out.  this will correspond to the attached
+// UML diagram.  I think I got all the main points.  The Pseudocode willl walk through adding an item, get all its info, start a customer tab, save the customers
+// tab, and the process of closing out a customer.
+// the main actor in this scenario is the waiter or bartender, starting when a customer orders
+
+//Customer order
+//This process describes the order_function
+while tab_status does not equal "closing"
+    order_status = open
+    Write "To start order does Customer have an open tab?"
+    read input
+    if input == "No"
+        Create new tab
+        total = 0
+        Write "Does Customer want to use a card to open tab?"
+        read input
+        if input == "Yes"
+            Write "Swipe Card when ready"
+            read swipe input
+                customer_name
+                card_number
+                card_expiration
+                card_code
+            save customer_name, card_number, card_expiration, card_code to database
+            card_attached = True
+        else
+            Write "Enter customer name"
+            read input
+            set customer_name to input
+            save customer_name to database
+            card_attached = False
+        //start tab process
+        set tab label to customer_name
+    else
+        Write "What is customers name?"
+        read input 
+        set customer_name to input
+        Open tab labeled customer_name from database
+        total = total attached to customer_name tab
+        Write "Does Customer want to close tab?"
+        read input
+        if input == "Yes"
+            //ending order loop and going to the close tab functions
+            order_status = "done"
+            tab_status = "closing"
+        else 
+            
+
+    While order_status does not equal "done"
+        write "Enter item ordered and quantity"
+        read input 
+            item
+            item_quantity
+        get price, item_inventory from database filtered on item
+        save [item, price, item_quantity] to index
+        total = total + price * item_quantity
+    // check items availablity
+        if item_inventory >= item_quantity
+            add index to tab
+            write "Does customer want to order another item?"
+            read input
+            if input == "yes"
+                return
+            else    
+               
+        else    
+            //returning to the top to start another order
+            write "Would the customer like to order a different item?"
+            read input
+            if input == "yes"
+                return
+            else
+            order_status = "done"
+            tab_status = "open"
+            save tab labeled customer_name to database
+        //ending order loop and going to the close tab functions              
+    write "Does customer want to close tab?"
+    read input 
+    if input == "yes"
+        order_status = "done"     
+        tab_status = "closing"
+    else
+        order_status = "done"
+        tab_status = "open"
+        save tab labeled customer_name to database
+        return
+// closing out tab
+if card_attached == False  
+    Write "Swipe Card when ready"
+    read swipe input
+        customer_name
+        card_number
+        card_expiration
+        card_code
+    save customer_name, card_number, card_expiration, card_code to database
+write "Obtain customer signature"
+read input
+set signature as input
+send signature, total, customer_name, card_number, card_expiration, card_code to payment processor
+receive transaction_status from payment processor
+// return from credit card processor should return "cleared" or "not cleared"
+while transaction_status = "not cleared"
+    Write "Transaction not cleared.  Ask for different credit card from customer."
+    Write "Swipe Card when ready"
+    read swipe input
+        customer_name
+        card_number
+        card_expiration
+        card_code
+    save customer_name, card_number, card_expiration, card_code to database
+    write "Obtain customer signature"
+    read input
+    set signature as input    
+    send signature, total, customer_name, card_number, card_expiration, card_code to payment processor
+    receive transaction_status from payment processor
+
+write "Transaction cleared. Thank you."
+delete customer_number, card_expiration, card_code from database
+save tab labeled customer_name and total to database
+
+
+
+
+
+                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
