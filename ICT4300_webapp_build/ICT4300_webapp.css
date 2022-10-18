@@ -1,69 +1,13 @@
 div.background {
     
     /* width: 100%; */
-    height: 100px;
+    /* height: 100%; */
     background: url('https://www.dc.com/sites/default/files/imce/2020/07-JUL/DCU_Rewards_Metropolis_wp_5f2b1a15dda776.09686626.jpg') no-repeat;
     background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    opacity: 20%;
-    align-self: center;
+    background-size: 100% 100%;
+    background-position: center center ;
     
-    }
-
-
-.wrapperLogo{
-    float: right;
-    width: 40px;
-    height: 40px;
-    }
-
-    #wrapper {
-        width: 1200px;
-        margin: 0 auto;
-        background-color: #ff0000;
-    }
-    #logo{
-        float: right;
-        width: 100px;
-        height: 100px;
-    }
-    .top-menu {
-        margin-top: 30px;
-        background-color: #ff0101;
-    }
-
-    .logo {
-        flex: 0;
-    }
-
-    .between {
-        display: flex;
-        justify-content: space-between;
-        flex: 1;
-    }
-
-    .menu div ul.left {
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .menu div ul.right {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .menu ul li {
-        flex: auto;
-        display: inline;
-        list-style: none;
-        padding: 0 1rem;
-    }
-
-    .menu ul li a {
-        text-decoration: none;
-        color: #303030;
-        font: 14px lato;
+    
     }
 
 /* The side navigation menu */
@@ -77,7 +21,7 @@ div.background {
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
-    transition: .8s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
   }
   
   /* The navigation menu links */
@@ -87,7 +31,7 @@ div.background {
     font-size: 25px;
     color: #818181;
     display: block;
-    transition: 0.3s;
+    transition: 0.8s;
   }
   
   /* When you mouse over the navigation links, change their color */
@@ -103,13 +47,35 @@ div.background {
     font-size: 36px;
     margin-left: 50px;
     color: #818181;
-  }
+}
+.title{
+  height: 1px;
+  width: 100%;
+  margin-left: 250px;
+  transition: .8s;
+  text-align: center;
+
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+  margin-left: 25%;
+  margin-top: 0%;
+  background-color: rgb(255, 255, 255);
+  border: 5px solid #111;
+  width: 50%;
   
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
-    transition: margin-left .5s;
-    padding: 20px;
-    margin-left: 250px;
+}
+  .openNavElement{
+    /* background-color: rgb(255, 255, 255);
+    border: 5px solid #111; */
+    width: auto;
+    float: left;
+    /* z-index: 2;
+    margin: 50px;
+    padding: .5%; */
+    
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
