@@ -1,30 +1,16 @@
 <!DOCTYPE html>
-<script>
-function getBooks(){
-    document.getElementByID("output").innerHTML="";
-    fetch("http://openlibrary.org/search.json?q=" + document.getElementById("input").value)
-    .then(a => a.json())
-    .then(response => 
-        {for(var i=0; i<15;i++)
-            {
-            document.getElementById("output").innerHTML += 
-            "<h2>"+response.docs[i].title+"</h2>"+
-            response.docs[i].author_name[0]+
-            "<br><img src='http://covers.openlibrary.org/b/isbn/"+response.docs[i].isbn[0]+"-M.jpg'<br>";
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT 4300 - API apiCallFollow </title>
+    <link rel="stylesheet" href="apiCallFollow.css">
+</head>
 
-            }
-        }
-        );
-    
-}
-
-
-
+<script src="apiCallFollow.js">
 </script>
-
-<!-- https://www.youtube.com/watch?v=LNKuZBYpl4o -->
-
-<input id ='input'>
-<button onclick="getbooks()">Get books</button><br>
-
+<input id = "input">
+<button onclick = "getBooks()">Get books</button><br>
 <div id = "output"></div>
+<!-- https://www.youtube.com/watch?v=LNKuZBYpl4o -->
