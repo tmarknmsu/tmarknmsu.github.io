@@ -1,3 +1,5 @@
+
+
 function getBooks(){
 	document.getElementById('output').innerHTML="";
 	fetch("http://openlibrary.org/search.json?q="+document.getElementById("myInput").value)
@@ -13,23 +15,30 @@ function getBooks(){
 			response.docs[i].author_key[0]+
 			// gets the book cover
 			"<br><img src='http://covers.openlibrary.org/b/isbn/"+response.docs[i].isbn[0]+"-S.jpg'><br>";
+			
+
 
 		}
 
 
 	});
-};
+	};
 
+let input = document.getElementById("myInput");
+let searchButton = document.getElementById('mySearch');
 
-var input = document.getElementById("myInput")
 input.addEventListener("keypress", function(event) {
 	if(event.key == "Enter"){
 		event.preventDefault();
-		document.getElementById("mySearch").click;
+		searchButton.click();
+		// getBooks();
+		console.log("atleast it registered");
 		
 	}
 
 });
+
+
 
 
 
