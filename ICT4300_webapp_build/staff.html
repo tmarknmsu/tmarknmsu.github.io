@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT 4300 - Library Web App Development - Staff Services</title>
+    <link rel="stylesheet" href="ICT4300_webapp.css">
+</head>
+<script src="ICT4300_webapp.js" defer></script>
+<noscript>You need to enable Javascript to view the full site.</noscript>
+<body>
+
+    <div class = "background">
+    
+           <!-- Side navigator -->    
+      <div id="mySidenav" class="sidenav">
+        <span style="font-size:30px;cursor:pointer" class="closebtn" onclick="closeNav()">close &#9776;</span>
+        <a href="catalog.html">Catalog</a>
+        <a href="recommendation.html">Recommendations</a>
+        <a href="events.html">Events</a>
+        <a href="account.html">Account Information</a>
+        <a href="staff.html">Staff Services</a>
+      </div>
+
+      <div id = "title">
+        <H1>Metropolis Public Library</H1>
+      </div>       
+      <div class="topnav">
+            <a class="active" href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+            <button type= "button" id = "mySearch" onclick = "getBooks()">Search</button>
+            <input type="text" id = "myInput" placeholder="Search..">
+            
+            
+        <div class ="openNavElement">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+          <!-- Use any element to open the sidenav -->
+          <span onclick="openNav()"></span>
+        </div> 
+      </div> 
+      <div id="main">  
+
+         
+
+      
+           
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      
+        <ul class="left">
+          <div id = "output"></div>
+            <p id = "boxTitle">Staff Services page is still a work in progress</p>  
+            <img id="wip" src="https://i1.wp.com/cabinet-pins-francs.fr/wp-content/uploads/2017/08/gif-en-construction.gif?fit=300%2C300" alt="Jackhammer cartoon"> 
+           
+          </ul>
+      </div>
+</div> 
+
+
+
+
+
+</body>

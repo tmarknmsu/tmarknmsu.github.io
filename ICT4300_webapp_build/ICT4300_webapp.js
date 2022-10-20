@@ -29,7 +29,7 @@ function getBooks(){
 		for(var i=0; i<10; i+=1)
 		{
 			// gets the title
-			document.getElementById("output").innerHTML+="<h1>"+response.docs[i].title+"</h1>"+
+			document.getElementById("output").innerHTML+="<h2>"+response.docs[i].title+"</h2>"+
 			// gets the author
 			response.docs[i].author_name[0]+"<br>"+
 			// gets author key
