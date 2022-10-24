@@ -14,20 +14,22 @@ document.getElementById("title").style.marginLeft = "0";
 }
 
 function getBooks(){
+	document.getElementById("searchResults_add").innerHTML+="<p id= 'searchResults'>Search Results<p>"
 	document.getElementById('output').innerHTML="";
 	fetch("http://openlibrary.org/search.json?q="+document.getElementById("myInput").value)
 	.then(a=> a.json())
 	.then(response =>{
 		for(var i=0; i<10; i+=1)
-		{
+		{	
+			
 			// gets the title
-			document.getElementById("output").innerHTML+="<h2>"+response.docs[i].title+"</h2>"+
+			document.getElementById("output").innerHTML+="<div class = 'bookDetails'><h2 class = 'bookTitle'>"+response.docs[i].title+"</h2>"+
 			// gets the author
-			response.docs[i].author_name[0]+"<br>"+
+			"<p class='authorName'>"+response.docs[i].author_name[0]+"</p><br>"+
 			// gets author key
-			response.docs[i].author_key[0]+
+			"<p class='authorID'>"+response.docs[i].author_key[0]+"</p>"+
 			// gets the book cover
-			"<br><img src='http://covers.openlibrary.org/b/isbn/"+response.docs[i].isbn[0]+"-S.jpg'><br>";
+			"</div><br><img class='bookCover' src='http://covers.openlibrary.org/b/isbn/"+response.docs[i].isbn[0]+"-L.jpg'><br><hr></div>";
 			
 
 

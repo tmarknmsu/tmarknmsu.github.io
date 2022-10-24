@@ -14,22 +14,14 @@
   
   
   }
-/* div.background { */
-    
-    /* width: 100%; */
-    /* height: 100%; */
-    /* background: url('https://www.dc.com/sites/default/files/imce/2020/07-JUL/DCU_Rewards_Metropolis_wp_5f2b1a15dda776.09686626.jpg') no-repeat;
-    background-attachment: fixed;
-    background-size:  100% 100%;
-    background-position: center center ;
-    
-    
-    } */
 
-body { 
-  background-image: url('https://www.dc.com/sites/default/files/imce/2020/07-JUL/DCU_Rewards_Metropolis_wp_5f2b1a15dda776.09686626.jpg')
-  background-repeat: no-repeat;
-}
+    html { 
+      background: url('https://www.dc.com/sites/default/files/imce/2020/07-JUL/DCU_Rewards_Metropolis_wp_5f2b1a15dda776.09686626.jpg') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
 
     
 /* The side navigation menu */
@@ -70,15 +62,7 @@ body {
     margin-left: 50px;
     color: #818181;
 }
-/* .title{
-  height: 1px;
-  width: 100%;
-  margin-left: 250px;
-  transition: .8s;
-  text-align: center;
 
-} */
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
   padding: 20px;
@@ -168,3 +152,22 @@ body {
     }
   }
 
+  /* When book results come back,  jsut spreading them out a little nicer */
+#searchResults{
+  color: red;
+}
+.bookDetails{
+max-width: 100%;
+text-align: right;
+}
+.authorName{
+/* float: right; */
+/* font-weight: bolder; */
+}
+.authorID{
+/* float: right; */
+}
+
+.bookCover{
+  /* float: left; */
+}
