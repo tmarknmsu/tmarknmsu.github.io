@@ -29,7 +29,7 @@ function getBooks(){
 			// gets author key
 			"<p class='authorID'>"+response.docs[i].author_key[0]+"</p>"+
 			// gets book key
-			// "<p class='bookID'>"+response.docs[i].book_id[0]+"</p>"+
+			"<p class='bookID'>"+response.docs[i].book_id[0]+"</p>"+
 			// gets the book cover
 			"</div><br><img class='bookCover' src='http://covers.openlibrary.org/b/isbn/"+response.docs[i].isbn[0]+"-L.jpg'><br><hr></div>";
 			
