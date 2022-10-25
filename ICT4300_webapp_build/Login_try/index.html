@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT 4300 - Library Web App Development - Login Try</title>
+    <link rel="stylesheet" href="ICT4300_webapp.css">
+</head>
+<body>
+<div id="loginWindow">
+    <h1>Login</h1>
+<input id="username" type="text" placeholder="username"><br>
+<input id="password" type="text" placeholder="password"><br>
+<button id = "loginBtn">Login</button><br>
+</div>
+<p id="response"></p> 
+</body>
+
+<script>
+
+function login (){
+    document.getElementById("response").innerHTML= "";
+    let username = document.getElementById("username").value || "";
+    let password = document.getElementById("password").value|| "";
+    response = document.getElementById("response");
+    if (username == "" || password==""){
+    response.innerHTML = "cannot have blank username/password."
+    }
+    else{response.innerHTML = "Thanks please wait while we check."};
+}
+
+const btn = document.getElementById("loginBtn");
+btn.addEventListener('click',login);
+
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<Head>
+
+</Head>
+<style>
+    input {
+  width: 5%;
+}
+
+</style>
+<h1>Do the Math. What is the answer?</h1>
+
+<input type = number id = "x" >&ensp;
+<select id="operator" size = 1>
+    <option selected >+</option>
+    <option >-</option>
+    <option >*</option>
+    <option >/</option>
+  </select>&ensp;
+<input type = number id = "y" >&ensp;=
+<input type="number" id = "z" >
+<button id = "myBtn">Check!</button><br>
+<p id = "output"></p>
+<p id = "outputTwo"></p>
+
+<script>
+
+const output = document.getElementById("output").innerHTML;        
+
+
+function calculate(){
+
+        let xVar = +document.getElementById("x").value || 0;
+        let yVar = +document.getElementById("y").value|| 0;
+        let zVar = +document.getElementById("z").value|| 0;
+        let op = document.getElementById("operator").value;
+        document.getElementById("output").innerHTML = ""
+        if (op == "+"){
+            var answer = xVar + yVar;
+        }
+        else if (op == "-"){
+            var answer = xVar - yVar;
+        }
+        else if (op == "*"){
+           var answer = xVar * yVar;
+        }
+        else { var answer = xVar / yVar;}
+
+        if (answer == zVar) {
+            document.getElementById("output").innerHTML = xVar +op+yVar +"="+answer+" Well done that is the correct answer";
+            // output = "Not the right answer. The correct answer is " + answer;
+        }
+        else {
+            document.getElementById("output").innerHTML = xVar +op+yVar+"=" +zVar+ " is Not Correct!";
+        
+        }
+    // document.getElementById("outputTwo").innerHTML = xVar +op+yVar +"="+answer+" z ="+zVar+"The button has been clicked."
+}
+        
+	    
+const btn = document.getElementById("myBtn");
+btn.addEventListener('click',calculate);
+
+// function testOut(){        
+//     document.getElementById("output").innerHTML = "The button has been clicked.";
+// 	    };
+
+// 
+
+// btn.addEventListener('click',testOut);
+
+</script>
+
