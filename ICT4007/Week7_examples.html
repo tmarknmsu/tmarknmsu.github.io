@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<!-- 
+<label for="weather">Select the weather type today: </label>
+<select id="weather">;
+  <option value="">--Make a choice--</option>;
+  <option value="sunny">Sunny</option>;
+  <option value="rainy">Rainy</option>;
+  <option value="snowing">Snowing</option>;
+  <option value="overcast">Overcast</option>;
+</select>
+
+<p></p>
+
+<script>
+    const select = document.querySelector('select');
+    const para = document.querySelector('p');
+    
+    select.addEventListener("change", setWeather,false);
+    
+    function setWeather() {
+      const choice = select.value;
+    
+      switch (choice) {
+        case 'sunny':
+          para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+          break;
+        case 'rainy':
+          para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+          break;
+        case 'snowing':
+          para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+          break;
+        case 'overcast':
+          para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+          break;
+        default:
+          para.textContent = 'test';
+      };
+    };
+    
+    
+    </script> -->
+
+
+<!-- <head>
+
+</head>
+<label for="theme">Select theme: </label>
+<select id="theme">
+  <option value="white">White</option>
+  <option value="black">Black</option>
+</select>
+
+<h1>This is my website</h1>
+
+<script >
+
+const select = document.querySelector('select');
+const html = document.querySelector('html');
+document.body.style.padding = '10px';
+
+function update(bgColor, textColor) {
+  html.style.backgroundColor = bgColor;
+  html.style.color = textColor;
+}
+
+select.addEventListener('change', () => select.value === 'black'
+  ? update('black', 'white')
+  : update('white', 'black')
+);
+
+</script> -->
+
+<!-- helpful for finding names.  use for the other class project -->
+
+<!-- <label for="search">Search by contact name: </label>
+
+<input id="search" type="text" />
+<button>Search</button>
+
+<p></p>
+
+<script>
+const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+const para = document.querySelector('p');
+const input = document.querySelector('input');
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', () => {
+//   below makes sure it searches for lower case as well
+  const searchName = input.value.toLowerCase();
+  input.value = '';
+  input.focus();
+  para.textContent = '';
+  for (const contact of contacts) {
+    const splitContact = contact.split(':');
+    if (splitContact[0].toLowerCase() === searchName) {
+      para.textContent = `${splitContact[0]}'s number is ${splitContact[1]}.`;
+      break;
+    }
+  }
+  if (para.textContent === '') {
+   para.textContent = 'Contact not found.';
+ }
+});
+</script> -->
+
+
+<!-- <label for="number">Enter number: </label>
+<input id="number" type="text" />
+<button>Generate integer squares</button>
+
+<p id = "output">Output:</p>
+
+<script>
+    const para = document.getElementById('output');
+const input = document.querySelector('input');
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', () => {
+  para.textContent = 'Output: ';
+  const num = input.value;
+  input.value = '';
+  input.focus();
+  for (let i = 1; i <= num; i++) {
+    let sqRoot = Math.sqrt(i);
+    if (Math.floor(sqRoot) !== sqRoot) {
+      continue;
+    }
+    para.textContent += `${i} `;
+  }
+});
+</script> -->
+
+<!-- countdown example -->
+<!-- 
+<style>
+    html {
+  font-family: sans-serif;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.a11y-label {
+  margin: 0;
+  text-align: right;
+  font-size: 0.7rem;
+  width: 98%;
+}
+
+body {
+  margin: 10px;
+  background: #f5f9fa;
+}
+</style>
+<button>Start Countdown</button>
+<h2 id="output">
+   
+</h2>
+<p>start</p>
+
+<script>
+const btn = document.querySelector('button');    
+let output = document.getElementById('output');
+output.innerHTML = '';
+const para = document.createElement('p');
+// let i = 10;
+
+
+function countdown() {
+    
+    for ( let i = 10; i>=0; i--) {
+       const tMinus = 'T Minus ' + i;
+       output.textContent += tMinus;
+       console.log(i);
+    }
+    output.textContent += ' Fire Fire Fire!';
+}
+
+btn.addEventListener('click',countdown)
+
+// para.textContent = ;
+// output.appendChild(para);
+
+</script> -->
+<!-- 
+<form name="selectForm">
+    <label for="musicTypes">Choose some music types, then click the button below:</label><br>
+    <select id="musicTypes" name="musicTypes" multiple>
+      <option selected>R&B</option>
+      <option>Jazz</option>
+      <option>Blues</option>
+      <option>New Age</option>
+      <option>Classical</option>
+      <option>Opera</option>
+    </select>
+    <br>
+    <button id="btn" type="button">How many are selected?</button>
+    <p id = "output">
+        test
+    </p>
+  </form>
+  <script>
+    function howMany(selectObject) {
+        let numberSelected = 0;
+        for (let i = 0; i < selectObject.options.length; i++) {
+            if (selectObject.options[i].selected) {
+            numberSelected++;
+            }
+        }
+        return numberSelected;
+        }
+
+        const btn = document.getElementById('btn');
+        let myOutput = document.getElementById("output");
+        
+        btn.addEventListener('click', () => {
+            myOutput.innerHTML = "";    
+            const musicTypes = document.selectForm.musicTypes;
+            myOutput.innerHTML += `You have selected ${howMany(musicTypes)} option(s).`;
+            console.log(`You have selected ${howMany(musicTypes)} option(s).`);1
+            });
+
+  </script> -->
+
+<style>
+    input {
+  width: 5%;
+}
+
+</style>
+<h1>Do the Math. What is the answer?</h1>
+
+<input type = number id = "x" >&ensp;
+<select id="operator" size = 1>
+    <option selected >+</option>
+    <option >-</option>
+    <option >*</option>
+    <option >/</option>
+  </select>&ensp;
+<input type = number id = "y" >&ensp;=
+<input type="number" id = "z" >
+<button id = "myBtn">Check!</button><br>
+<p id = "output"></p>
+<p id = "outputTwo"></p>
+
+<script>
+
+const output = document.getElementById("output").innerHTML;        
+
+
+function calculate(){
+
+        let xVar = +document.getElementById("x").value || 0;
+        let yVar = +document.getElementById("y").value|| 0;
+        let zVar = +document.getElementById("z").value|| 0;
+        let op = document.getElementById("operator").value;
+        
+        if (op == "+"){
+            var answer = xVar + yVar;
+        }
+        else if (op == "-"){
+            var answer = xVar - yVar;
+        }
+        else if (op == "*"){
+           var answer = xVar * yVar;
+        }
+        else { var answer = xVar / yVar;}
+
+        if (answer == zVar) {
+            output = "Not the right answer. The correct answer is " + answer+" ";
+        }
+        // else {
+        // output = xVar +op+yVar+"=" +answer+ " is Correct!";
+        
+        // }
+    document.getElementById("outputTwo").innerHTML = xVar +op+yVar +"="+answer+" z ="+zVar+"The button has been clicked."}
+        
+	    
+const btn = document.getElementById("myBtn");
+btn.addEventListener('click',calculate);
+
+// function testOut(){        
+//     document.getElementById("output").innerHTML = "The button has been clicked.";
+// 	    };
+
+// 
+
+// btn.addEventListener('click',testOut);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
