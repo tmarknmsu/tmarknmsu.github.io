@@ -18,16 +18,18 @@
 </body>
 
 <script>
-let username = document.getElementById("username").value || "";
-let password = document.getElementById("password").value|| "";
-response = document.getElementById("response");
 
 function login (){
     document.getElementById("response").innerHTML= "";
-if (username == "" || password==""){
-    document.getElementById("response").innerHTML = "cannot have blank username/password."
-    };
+    let username = document.getElementById("username").value || "";
+    let password = document.getElementById("password").value|| "";
+    response = document.getElementById("response");
+    if (username == "" || password==""){
+    response.innerHTML = "cannot have blank username/password."
+    }
+    else{response.innerHTML = "Thanks please wait while we check."};
 }
+
 const btn = document.getElementById("loginBtn");
 btn.addEventListener('click',login);
 
