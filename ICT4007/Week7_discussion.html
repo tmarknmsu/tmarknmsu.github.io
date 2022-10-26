@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Fun example of a calculator -->
+<style>
+    input {
+  width: 5%;
+}
+#retryBtn {
+  visibility:hidden;
+}
+#restartBtn {
+  visibility: hidden;
+}
+</style>
+<h1>Do the Math. What is the answer?</h1>
+<input type = number id = "x" >&ensp;
+<select id="operator" size = 1>
+    <option selected >+</option>
+    <option >-</option>
+    <option >*</option>
+    <option >/</option>
+  </select>&ensp;
+<input type = number id = "y" >&ensp;=
+<input type="number" id = "z" >
+<button id = "myBtn">Check!</button><br>
+<p id = "output"></p>
+<p id = "outputTwo"></p>
+<button id = "retryBtn">Retry?</button><br>
+<button id = "revealBtn">Reveal Answer?</button><br>
+<button id = "restartBtn">Start Over?</button><br>
+<!-- Javascript portion is below -->
+<script>
+const output = document.getElementById("output").innerHTML;        
+function calculate(){
+        
+        let xVar = +document.getElementById("x").value || 0;
+        let yVar = +document.getElementById("y").value|| 0;
+        let zVar = +document.getElementById("z").value|| 0;
+        let op = document.getElementById("operator").value;
+        
+        if (op == "+"){
+            var answer = xVar + yVar;
+        }
+        else if (op == "-"){
+            var answer = xVar - yVar;
+        }
+        else if (op == "*"){
+           var answer = xVar * yVar;
+        }
+        else { var answer = xVar / yVar;}
+
+        if (answer === zVar) {
+          document.getElementById("output").innerHTML = xVar +op+yVar+"=" +answer+ " is Correct!";
+          let status = "correct";
+          document.getElementById("restartBtn").style.visibility = 'visible';
+          
+        }
+        else {
+          document.getElementById("output").innerHTML = xVar +op+yVar+" does not equal "+ zVar;
+          let status = "wrong"
+          document.getElementById("retryBtn").style.visibility = 'visible';
+          document.getElementById("restartBtn").style.visibility = 'visible';
+        }
+        return (answer);
+     };
+
+function clearZRestart(){
+    document.getElementById("z").value = "";
+    
+    }  ;
+function restart(){
+  document.getElementById("x").value = '';
+  document.getElementById("y").value = '';
+  document.getElementById("z").value = '';
+  document.getElementById("op").value = '+';
+}
+function reveal(){
+    document.getElementById("outputTwo").innerHTML = "The answer is -"+calculate;
+}
+	    
+const btn = document.getElementById("myBtn");
+btn.addEventListener('click',calculate);
+  
+const retrybtn = document.getElementById("retryBtn");
+retrybtn.addEventListener('click',clearZRestart);
+
+const revealbtn = document.getElementById("revealBtn");
+revealbtn.addEventListener('click',reveal);
+
+const restartbtn = document.getElementById("restartBtn");
+restarbtn.addEventListener('click',restart);
+
+// document.getElementById("outputTwo").innerHTML = 
+
+// function testOut(){        
+//     document.getElementById("output").innerHTML = "The button has been clicked.";
+// 	    };
+
+// 
+
+// btn.addEventListener('click',testOut);
+
+</script>
