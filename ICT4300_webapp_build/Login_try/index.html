@@ -27,10 +27,32 @@ function login (){
     if (username == "" || password==""){
     response.innerHTML = "cannot have blank username/password."
     }
-    else{response.innerHTML = "Thanks please wait while we check."};
+    else{response.innerHTML = "Thanks please wait while we check.";
+    var callAPI = (username,password)=>{
+        // instantiate a headers object
+        var myHeaders = new Headers();
+        // add content type header to object
+        myHeaders.append("Content-Type", "application/json");
+        // using built in JSON utility package turn object to string and store in a variable
+        var raw = JSON.stringify({"username":username,"password":password});
+        // create a JSON object with parameters for API call and store in a variable
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+        // make API call with parameters and use promises to get response
+        fetch("https://fik0pfdjg9.execute-api.us-west-1.amazonaws.com/loginTestStage", requestOptions)
+        .then(response => response.text())
+        .then(result => alert(JSON.parse(result).message))
+        .catch(error => console.log('error', error));}}
 }
 
 const btn = document.getElementById("loginBtn");
 btn.addEventListener('click',login);
+
+
+        }
 
 </script>
