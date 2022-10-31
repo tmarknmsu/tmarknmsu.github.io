@@ -151,6 +151,31 @@
 // }
 // console.log("I still ate too much!");
 
+// pieTotal = 8
+// piecesDesired = 20
+
+// function eat_some_pie(pieTotal, piecesDesired){
+//         if (piecesDesired > pieTotal){
+//             piesNeeded = Math.ceil((piecesDesired - pieTotal)/8)
+//             console.log("Guess I'll need to get ",piesNeeded," more pie(s)!");
+//             pieTotal = pieTotal + 8 * piesNeeded
+//         }
+//       for (let i = 1; i<=pieTotal;i++) {
+//         piecesLeft = pieTotal-i
+//           console.log('Lets Eat a piece of pie!');
+//           console.log("I've now eaten ",i," piece(s) of pie!");
+//           console.log('There are now ', piecesLeft,' pieces left');
+//         if (i == piecesDesired){
+          
+//           break
+//         }
+//         else {console.log("I am still going to eat ", piecesDesired - i ," more pieces!");}
+//       }
+
+//       console.log("Can't believe I ate that much!");
+//     }
+
+// eat_some_pie(pieTotal, piecesDesired)   
 pieTotal = 8
 piecesDesired = 20
 
@@ -160,19 +185,19 @@ function eat_some_pie(pieTotal, piecesDesired){
             console.log("Guess I'll need to get ",piesNeeded," more pie(s)!");
             pieTotal = pieTotal + 8 * piesNeeded
         }
-      for (let i = 1; i<=pieTotal;i++) {
-        piecesLeft = pieTotal-i
+        let i = 1
+      while ( i <= pieTotal && i<piecesDesired) {
+          piecesLeft = pieTotal-i
           console.log('Lets Eat a piece of pie!');
           console.log("I've now eaten ",i," piece(s) of pie!");
-          console.log('There are now ', piecesLeft,' pieces left');
-        if (i == piecesDesired){
-          
-          break
-        }
-        else {console.log("I am still going to eat ", piecesDesired - i ," more pieces!");}
-      }
+          console.log('There are now ', piecesLeft,' pieces left');    
+          console.log("I am still going to eat ", piecesDesired - i ," more pieces!")
+          i++}
+      
+      
 
       console.log("Can't believe I ate that much!");
     }
 
 eat_some_pie(pieTotal, piecesDesired)   
+
