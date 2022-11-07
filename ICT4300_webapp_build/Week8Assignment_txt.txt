@@ -1,0 +1,154 @@
+I admit I wasn't wuite sure how to answer the second part of our assignment.  
+I built my database using Amazon's NoSQL Workbench as welll as thier online interface.
+Below are a couple fucntions that I built so far for the webapp that creates new items and checks logins.
+
+In the first function, a user fills out a form on their browser then the data transfers 
+through te API gateway and to the lambda function where the username is checked to make sure it is unique,
+Then creates an item to put in the UserInfo2 database including making a uniqueID for it using the uuid function.
+The funciotn also uses the same username and UserID and creates a new item in the UserLoginInfo2 database, for use
+in the second function.
+The function just returns a true or false that the profile was created.
+/////////////
+# Create user function.
+
+import json
+# import the AWS SDK (for Python the package name is boto3)
+import boto3
+import uuid
+from boto3.dynamodb.conditions import Key, Attr
+# import two packages to help us with dates and date formatting
+from time import gmtime, strftime
+
+# create a DynamoDB object using the AWS SDK
+dynamodb = boto3.resource('dynamodb')
+# use the DynamoDB object to select our table
+login_table = dynamodb.Table('UserLoginInfo2')
+userinfo_table = dynamodb.Table('UserInfo2')
+primary_column_name = 'UserID'
+primary_key = 1
+# this just gets the time of the function to store
+now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+
+def lambda_handler(event, context):
+    userID = str(uuid.uuid4())
+    username = event['username']
+    password = event['password']
+    firstName = event['firstName']
+    middleIn = event['middleIn']
+    lastName = event['lastName']
+    addressLine1 = event['addressLine1']
+    addressLine2 = event['addressLine2']
+    city = event['city']
+    state = event['state']
+    zipCode = event['zipCode']
+    email = event['email']
+    phoneNumber = event['phoneNumber']
+
+
+    response = login_table.scan(FilterExpression = Attr('Username').eq(username))
+    count = response["Count"]
+    if count == 0:
+        create_user = True
+        login_table.put_item(Item={
+                "UserID":userID,
+                "Username": username,
+                "Password": password,
+                "Last_Login": now,
+                "CreatedAt":now,
+                "UpdatedAt": now,
+                "Status":"A"
+                })
+        
+        userinfo_table.put_item(Item={
+            "UserID":userID,
+            "Username": username,
+                "FNAME": firstName,
+                "middleIn":middleIn,
+                "LNAME": lastName,
+                "AddressLine1":addressLine1,
+                "AddressLine2":addressLine2,
+                "City":city,
+                "State":state,
+                "zipCode":zipCode,
+                "Email": email,
+                "phoneNumber":phoneNumber
+                
+                })
+        
+    else:
+        create_user = False
+    return {'statusCode': 200,'body': json.dumps(create_user)}  
+///////////////////////
+In the second function, a user would input their username and password, passing to the function.  
+The function will check that the username exists first then confirm the password matches the input.
+The funciotn then updates the 'Last_Login' attribute to the current time so it records the last time a 
+user logged in. The funstion then also jsut returns a true or false.  Making sure the password data
+isn't being transmitted.
+///////////////////////
+import json
+# import the AWS SDK (for Python the package name is boto3)
+import boto3
+import uuid
+from boto3.dynamodb.conditions import Key, Attr
+# import two packages to help us with dates and date formatting
+from time import gmtime, strftime
+
+# create a DynamoDB object using the AWS SDK
+dynamodb = boto3.resource('dynamodb')
+# use the DynamoDB object to select our table
+login_table = dynamodb.Table('UserLoginInfo2')
+userinfo_table = dynamodb.Table('UserInfo2')
+primary_column_name = 'UserID'
+primary_key = 1
+# this just gets the time of the function to store
+now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+
+def lambda_handler(event, context):
+    userID = str(uuid.uuid4())
+    username = event['username']
+    password = event['password']
+    firstName = event['firstName']
+    middleIn = event['middleIn']
+    lastName = event['lastName']
+    addressLine1 = event['addressLine1']
+    addressLine2 = event['addressLine2']
+    city = event['city']
+    state = event['state']
+    zipCode = event['zipCode']
+    email = event['email']
+    phoneNumber = event['phoneNumber']
+
+
+    response = login_table.scan(FilterExpression = Attr('Username').eq(username))
+    count = response["Count"]
+    if count == 0:
+        create_user = True
+        login_table.put_item(Item={
+                "UserID":userID,
+                "Username": username,
+                "Password": password,
+                "Last_Login": now,
+                "CreatedAt":now,
+                "UpdatedAt": now,
+                "Status":"A"
+                })
+        
+        userinfo_table.put_item(Item={
+            "UserID":userID,
+            "Username": username,
+                "FNAME": firstName,
+                "middleIn":middleIn,
+                "LNAME": lastName,
+                "AddressLine1":addressLine1,
+                "AddressLine2":addressLine2,
+                "City":city,
+                "State":state,
+                "zipCode":zipCode,
+                "Email": email,
+                "phoneNumber":phoneNumber
+                
+                })
+        
+    else:
+        create_user = False
+    return {'statusCode': 200,'body': json.dumps(create_user)}  
