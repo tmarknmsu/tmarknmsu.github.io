@@ -1,4 +1,4 @@
-I admit I wasn't wuite sure how to answer the second part of our assignment.  
+I admit I wasn't quite sure how to answer the second part of our assignment.  
 I built my database using Amazon's NoSQL Workbench as welll as thier online interface.
 Below are a couple fucntions that I built so far for the webapp that creates new items and checks logins.
 
