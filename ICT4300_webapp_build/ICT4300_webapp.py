@@ -27,3 +27,33 @@ while i <= iterations:
     i= i+1
 
 
+#%%
+import datetime
+from datetime import timedelta, date, datetime
+today = date.today()
+timedelta= timedelta(days=21)
+dueDate = today + timedelta
+# %%
+
+import time
+from time import gmtime, strftime
+now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+print(now)
+
+current = gmtime()
+print(current)
+secs = time.time()
+min = 60
+hour = 60*min
+day= 24*hour
+week = 7*day
+print(day)
+
+
+print(secs)
+
+threeWeeks = secs+3*week
+
+
+threeWeeks = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime(threeWeeks))
+print(threeWeeks)
