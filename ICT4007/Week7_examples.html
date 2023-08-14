@@ -227,15 +227,19 @@ btn.addEventListener('click',countdown)
             });
 
   </script> -->
-
+<!-- Fun example of a calculator -->
 <style>
     input {
   width: 5%;
 }
-
+#retryBtn {
+  visibility:hidden;
+}
+#restartBtn {
+  visibility: hidden;
+}
 </style>
 <h1>Do the Math. What is the answer?</h1>
-
 <input type = number id = "x" >&ensp;
 <select id="operator" size = 1>
     <option selected >+</option>
@@ -248,14 +252,13 @@ btn.addEventListener('click',countdown)
 <button id = "myBtn">Check!</button><br>
 <p id = "output"></p>
 <p id = "outputTwo"></p>
-
+<button id = "retryBtn">Retry?</button><br>
+<button id = "restartBtn">Start Over?</button><br>
+<!-- Javascript portion is below -->
 <script>
-
 const output = document.getElementById("output").innerHTML;        
-
-
 function calculate(){
-
+        
         let xVar = +document.getElementById("x").value || 0;
         let yVar = +document.getElementById("y").value|| 0;
         let zVar = +document.getElementById("z").value|| 0;
@@ -272,18 +275,42 @@ function calculate(){
         }
         else { var answer = xVar / yVar;}
 
-        if (answer == zVar) {
-            output = "Not the right answer. The correct answer is " + answer+" ";
+        if (answer === zVar) {
+          document.getElementById("output").innerHTML = xVar +op+yVar+"=" +answer+ " is Correct!";
+          let status = "correct";
+          document.getElementById("restartBtn").style.visibility = 'visible';
+          
         }
-        // else {
-        // output = xVar +op+yVar+"=" +answer+ " is Correct!";
-        
-        // }
-    document.getElementById("outputTwo").innerHTML = xVar +op+yVar +"="+answer+" z ="+zVar+"The button has been clicked."}
-        
+        else {
+          document.getElementById("output").innerHTML = xVar +op+yVar+" does not equal "+ zVar;
+          let status = "wrong"
+          document.getElementById("retryBtn").style.visibility = 'visible';
+          document.getElementById("restartBtn").style.visibility = 'visible';
+        }
+     };
+
+function clearZRestart(){
+    document.getElementById("z").value = "";
+    
+    }  ;
+function restart(){
+  document.getElementById("x").value = '';
+  document.getElementById("y").value = '';
+  document.getElementById("z").value = '';
+  document.getElementById("op").value = '+';
+}
+
 	    
 const btn = document.getElementById("myBtn");
 btn.addEventListener('click',calculate);
+  
+const retrybtn = document.getElementById("retryBtn");
+retrybtn.addEventListener('click',clearZRestart);
+
+const restartbtn = document.getElementById("restartBtn");
+restartbtn.addEventListener('click',restart);
+
+// document.getElementById("outputTwo").innerHTML = 
 
 // function testOut(){        
 //     document.getElementById("output").innerHTML = "The button has been clicked.";
@@ -294,10 +321,6 @@ btn.addEventListener('click',calculate);
 // btn.addEventListener('click',testOut);
 
 </script>
-
-
-
-
 
 
 

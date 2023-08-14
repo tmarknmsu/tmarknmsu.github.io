@@ -126,5 +126,78 @@
 // }
 // while(i <= 5);
 
-let x = 3
-let y = 2
+
+// let pieTotal = 8
+// for (let i = 1; i<=pieTotal;i++) {
+//     console.log('Lets Eat a piece of pie!');
+//     console.log("I've now eaten ",i," piece(s) of pie!");
+//     console.log('There are now ', pieTotal-i,' pieces left');
+// }
+// console.log("Can't believe I ate the whole thing!");
+
+
+// let pieTotal = 8
+// let stomach = 'starving'
+// let i = 1
+// while (stomach != 'full') {    
+//     console.log('Lets Eat a piece of pie!');
+//     console.log("I've now eaten ",i," piece(s) of pie!");
+//     console.log('There are now ', pieTotal-i,' pieces left');
+//     if (i > 4){
+//         stomach = 'full'
+//     }
+
+//     i++
+// }
+// console.log("I still ate too much!");
+
+// pieTotal = 8
+// piecesDesired = 20
+
+// function eat_some_pie(pieTotal, piecesDesired){
+//         if (piecesDesired > pieTotal){
+//             piesNeeded = Math.ceil((piecesDesired - pieTotal)/8)
+//             console.log("Guess I'll need to get ",piesNeeded," more pie(s)!");
+//             pieTotal = pieTotal + 8 * piesNeeded
+//         }
+//       for (let i = 1; i<=pieTotal;i++) {
+//         piecesLeft = pieTotal-i
+//           console.log('Lets Eat a piece of pie!');
+//           console.log("I've now eaten ",i," piece(s) of pie!");
+//           console.log('There are now ', piecesLeft,' pieces left');
+//         if (i == piecesDesired){
+          
+//           break
+//         }
+//         else {console.log("I am still going to eat ", piecesDesired - i ," more pieces!");}
+//       }
+
+//       console.log("Can't believe I ate that much!");
+//     }
+
+// eat_some_pie(pieTotal, piecesDesired)   
+pieTotal = 8
+piecesDesired = 20
+
+function eat_some_pie(pieTotal, piecesDesired){
+        if (piecesDesired > pieTotal){
+            piesNeeded = Math.ceil((piecesDesired - pieTotal)/8)
+            console.log("Guess I'll need to get ",piesNeeded," more pie(s)!");
+            pieTotal = pieTotal + 8 * piesNeeded
+        }
+        let i = 1
+      while ( i <= pieTotal && i<piecesDesired) {
+          piecesLeft = pieTotal-i
+          console.log('Lets Eat a piece of pie!');
+          console.log("I've now eaten ",i," piece(s) of pie!");
+          console.log('There are now ', piecesLeft,' pieces left');    
+          console.log("I am still going to eat ", piecesDesired - i ," more pieces!")
+          i++}
+      
+      
+
+      console.log("Can't believe I ate that much!");
+    }
+
+eat_some_pie(pieTotal, piecesDesired)   
+

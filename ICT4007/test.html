@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<!-- <body> -->
+    <!-- <h1>Top 10 Scientists Books</h1> -->
+    <!-- only thing up here I noticed is you had type ="text" since the value you put in was text the
+    loop didn't know how to interact with it. As type = "number" you can add,subtract, etc. also as a number 
+    you can have it find the index where it couldnt as text.-->
+    <!-- Books Number: <input type="number" id="App" placeholder = "enter book index" > -->
+    
+  <!-- <button type="button" onclick="sci()">Click</button>
+    <p id="demo"></p>     -->
+    
+
+<!-- </body>  /   -->
+  
+<!-- <script type = "text/javascript"> -->
+<!-- // /// so instead of just a list I turned it into a list of 'objects' so we can assign the read or not status to it.
+//     var Sname = [{author:"Albert Einstein",bookRead:true},
+//                    {author:"Marie Curie",bookRead:false}, 
+//                    {author:"Isaac Newton",bookRead:true}, 
+//                    {author:"Charles Darwin",bookRead:false},
+//                    {author:'Nikola Tesla',bookRead:true},
+//                    {author:'Galileo Galilei',bookRead:false},
+//                    {author:'Ada Lovelace',bookRead:true},
+//                    {author:'Pythagoras',bookRead:false},
+//                    {author:'Carl Linnaeus',bookRead:true},
+//                    {author:'Rosalind Franklin',bookRead:false}];
+
+//      function sci() {
+//       let bookNumber = document.getElementById('App').value
+//       console.log('bookNumber =',bookNumber);
+
+//       let i = bookNumber;
+//       console.log(i);
+//       var output = document.getElementById('demo');
+//       var text = "<ol> ";
+//     while (i<=9) {
+//       console.log(Sname[i]);
+//         var book = Sname[i];
+//         let author = book.author;
+//         console.log('sname[i] = ',author);
+        
+//       if (book.bookRead == true){
+
+//         text = text+ "<li>Already read "+author+"'s books</li>";
+//         console.log('already read book');
+//       }
+//           else {
+//             text = text + "<li>You still need to read "+author+" books</li>";
+//             console.log('need to read book');
+//       };
+//       i++
+      
+//      }
+//      output.innerHTML = text +'</ol>';
+//   } -->
+  <!-- </script> -->
+
+
+
+<html>
+<body>
+    <h1>Top 10 Scientists Books</h1>
+    <!-- only thing up here I noticed is you had type ="text" since the value you put in was text the
+    loop didn't know how to interact with it. As type = "number" you can add,subtract, etc. also as a number 
+    you can have it find the index where it couldnt as text.-->
+    Books Number: <input type="number" id="App" value="  ">
+    <button type="button" onclick="sci()">Click</button>
+
+    <p id="demo"></p>    
+    
+    <script type = "text/javascript">
+
+   var Sname= ["Albert Einstein", "Marie Curie", "Isaac Newton", "Charles Darwin",'Nikola Tesla','Galileo Galilei','Ada Lovelace','Pythagoras','Carl Linnaeus','Rosalind Franklin'];
+
+    function sci() {
+      let i = document.getElementById("App").value
+//in your for loop the second part cant have i (a number) = Sname (a list) equal eachother.  
+// what I think you may be trying to do is get the "length".  length is jsut how many items in the list.
+// so just note the Sname.length which will equal 10.  but the index starts at 0 so there will only be 0-9 available
+    for (i; i<=Sname.length; i++) {
+        var book= "'" + Sname[i] + "'" +".";
+      // so what this loop will do as you will see once you test it out is just loop through all the books
+      //starting at whatever number you entered.  But start playing with it and see if you can get 
+      // what you wanted out of it.
+    if (Number < 8){
+//use window.prompt instead of print.  print wants to actually print something out.  prompt is jus the window that pops up
+      window.prompt("Already read" + book + "books");
+    }
+        else {
+          window.prompt("You still need to read" + book + "books");
+    }
+  }
+}
+    </script>
+</body>
+</html>
+
+
+
+    
